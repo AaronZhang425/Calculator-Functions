@@ -5,13 +5,16 @@ class Area:
     def circle_area_func(radius):
         '''Returns circle area'''
         return pi * radius ** 2
-
+    
+    @staticmethod
     def rectangle_area_func(side1, side2):
         return side1 * side2
 
+    @staticmethod
     def trapezoid_area_func(base1, base2, height):
         return ((base1 + base2) / 2) * height
 
+    @staticmethod
     def triangle_area_func(side1, side2):
         return (side1 * side2) / 2
 

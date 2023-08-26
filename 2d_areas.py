@@ -3,6 +3,7 @@ from math import pi
 class Area:
     @staticmethod
     def circle_area_func(radius):
+        '''Returns circle area'''
         return pi * radius ** 2
 
     def rectangle_area_func(side1, side2):

@@ -1,4 +1,5 @@
 def point_slope_equation(point1x, point1y, point2x, point2y):
+    '''Calculates slope between two points'''
     try:
         m = (point2y - point1y) / (point2x - point1x)
         b = m * point1x - point1y

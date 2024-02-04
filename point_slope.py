@@ -1,5 +1,4 @@
 def point_slope_equation(point1x, point1y, point2x, point2y):
-    '''Calculates slope between two points'''
     try:
         m = (point2y - point1y) / (point2x - point1x)
         b = m * point1x - point1y
@@ -7,15 +6,13 @@ def point_slope_equation(point1x, point1y, point2x, point2y):
         if b == 0:
             return f'y = {m}x'
         
-        elif b > 0:
+        if b > 0:
             return f'y = {m}x - {b}'
         
-        else:
-            return f'y = {m}x + {-b}'
+        return f'y = {m}x + {-b}'
 
     except ZeroDivisionError:
         return 'No slope'
-
 
 while True:
     try:

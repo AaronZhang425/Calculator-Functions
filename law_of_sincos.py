@@ -1,5 +1,11 @@
-from math import cos
-from math import sin
+import math
+
+a_side = 0
+a_angle = 0
+b_side = 0
+b_angle = 0
+c_side = 0
+c_angle = 0
 
 class LawOfSine():
     
@@ -13,11 +19,26 @@ class LawOfSine():
 
 class LawOfCos():
     @staticmethod
-    def loc_find_length():
-        pass
+    def loc_find_length(a_side, b_side, c_angle):
+        side_length = math.sqrt(
+            a_side**2 
+            + b_side**2 
+            - 2 * a_side * b_side * math.cos(c_angle)            
+        )
 
-    def loc_find_angle():
-        pass
+        return math.degrees(side_length)
+
+
+    @staticmethod
+    def loc_find_angle(a_side, b_side, c_side):
+        b_side + a_side
+        angle_rad = math.acos(
+            (c_side**2 - (a_side**2 - b_side**2)) / -2 
+            * a_side 
+            * b_side
+        )
+
+        return math.degrees(angle_rad)
 
 menu_loop = True
 while menu_loop:
@@ -35,9 +56,6 @@ while menu_loop:
             except ValueError:
                 print('Please enter a proper value\n')
 
-            ans = (a_side * sin(b_angle)) / sin(a_angle)
-
-    elif menu == '2':
         pass
 
     elif menu == '3':

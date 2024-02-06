@@ -10,20 +10,30 @@ c_angle = 0
 class LawOfSine():
     
     @staticmethod
-    def los_find_length():
-        pass
+    def los_find_length(a_side, a_angle, b_angle):
+        side_length = ((
+            a_side * math.sin(b_angle))
+            / math.sin(a_angle)
+        )
+        
+        return math.degrees(side_length)
 
     @staticmethod
-    def los_find_angle():
-        pass
+    def los_find_angle(a_side, a_angle, b_side):
+        angle_rad = (
+            math.asin((b_side * math.sin(a_angle))
+            / a_side)
+            )
+        
+        return math.degrees(angle_rad)
 
 class LawOfCos():
     @staticmethod
     def loc_find_length(a_side, b_side, c_angle):
         side_length = math.sqrt(
-            a_side**2 
-            + b_side**2 
-            - 2 * a_side * b_side * math.cos(c_angle)            
+            a_side**2
+            + b_side**2
+            - 2 * a_side * b_side * math.cos(c_angle)
         )
 
         return math.degrees(side_length)

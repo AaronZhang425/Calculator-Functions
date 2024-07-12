@@ -2,7 +2,6 @@ from math import *
 
 
 def quad_equation(a, b, c):
-
     try:
         radical = (b**2)-(4*a*c)
         sqroot = sqrt(radical)
@@ -20,9 +19,9 @@ def quad_equation(a, b, c):
         print(f'({-b} +- i * sqrt({sqroot})) / {2*a}')
         return 'No real answer'
         
-    
     except ZeroDivisionError:
         return '"a" cannot be zero'
+
 
 while True:
     try:    

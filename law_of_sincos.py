@@ -1,12 +1,5 @@
 import math
 
-a_side = 0
-a_angle = 0
-b_side = 0
-b_angle = 0
-c_side = 0
-c_angle = 0
-
 class LawOfSine():
     
     @staticmethod
@@ -55,18 +48,46 @@ while menu_loop:
     menu = input('MENU:\n1. Law of Sine\n2. Law of Cosine\n3. Exit\n').strip().lower()
 
     if menu == '1':
-        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side\n').lower().strip()
+        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side Length\n').lower().strip()
 
         if sub_menu == '1':
-            try:
-                a_angle = float(input('Angle of A in degrees: ').strip())
-                a_side = float(input('Length of side opposite to angle A:').strip())
-                b_angle = float(input('Angle of B in degrees:').strip())
-            
-            except ValueError:
-                print('Please enter a proper value\n')
+            input_value_loop = True
+            while input_value_loop:
+                try:
+                    a_angle = float(input('\nAngle of A in degrees: ').strip())
+                    a_side = float(input('Length of side opposite to angle A: ').strip())
+                    b_side = float(input('Lenght of side B: ').strip())
+                
+                    input_value_loop = False
 
-        pass
+                except ValueError:
+                    print('Please enter a proper value')
+                
+            print(f'\nAngle B is: {LawOfSine.los_find_angle(a_angle, a_side, b_side)} degrees\n')
+
+        elif sub_menu == '2':
+            input_value_loop = True
+            while input_value_loop:
+                try:
+                    a_angle = float(input('\nAngle of A in Degrees: ').strip())
+                    a_side = float(input('Length of side opposite to angle A: ').strip())
+                    b_angle = float(input('Angle of B in Degrees: ').strip())
+
+                    input_value_loop = False
+
+                except ValueError:
+                    print('Please enter a proper value')
+
+            print(f'\nThe length B is: {LawOfSine.los_find_length(a_angle, a_side, b_angle)}')
+
+    elif menu == '2':
+        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side Length\n').lower().strip()
+
+        if sub_menu == '1':
+            pass
+
+        elif sub_menu == '2':
+            pass
 
     elif menu == '3':
         menu_loop = False

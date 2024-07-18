@@ -34,9 +34,8 @@ class LawOfCos():
 
     @staticmethod
     def loc_find_angle(a_side, b_side, c_side):
-        b_side + a_side
         angle_rad = math.acos(
-            (c_side**2 - (a_side**2 - b_side**2)) / -2 
+            (c_side**2 - (a_side**2 + b_side**2)) / -2 
             * a_side 
             * b_side
         )
@@ -45,10 +44,10 @@ class LawOfCos():
 
 menu_loop = True
 while menu_loop:
-    menu = input('MENU:\n1. Law of Sine\n2. Law of Cosine\n3. Exit\n').strip().lower()
+    menu = input('MENU:\n1. Law of Sine\n2. Law of Cosine\n3. Exit\n').strip()
 
     if menu == '1':
-        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side Length\n').lower().strip()
+        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side Length\n').strip()
 
         if sub_menu == '1':
             input_value_loop = True
@@ -56,7 +55,7 @@ while menu_loop:
                 try:
                     a_angle = float(input('\nAngle of A in degrees: ').strip())
                     a_side = float(input('Length of side opposite to angle A: ').strip())
-                    b_side = float(input('Lenght of side B: ').strip())
+                    b_side = float(input('Length of side B: ').strip())
                 
                     input_value_loop = False
 
@@ -81,10 +80,22 @@ while menu_loop:
             print(f'\nThe length B is: {LawOfSine.los_find_length(a_angle, a_side, b_angle)}')
 
     elif menu == '2':
-        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side Length\n').lower().strip()
+        sub_menu = input('\nMENU:\n1. Find Angle\n2. Find Side Length\n').strip()
 
         if sub_menu == '1':
-            pass
+            input_value_loop = True
+            while input_value_loop:
+                try:
+                    a_side = float(input('\nLength of side A:').strip())
+                    b_side = float(input('\nLength of side B:').strip())
+                    c_side = float(input('\nLength of side C:').strip())
+
+                    input_value_loop = False
+                
+                except ValueError:
+                    print('Please enter a proper value')
+                
+            print(f'\nThe anlge opposite to C measures {LawOfCos.loc_find_angle(a_side, b_side, c_side)} degrees')
 
         elif sub_menu == '2':
             pass

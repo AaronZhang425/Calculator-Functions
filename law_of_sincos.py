@@ -88,6 +88,21 @@ while menu_loop:
                 try:
                     a_side = float(input('\nLength of side A:').strip())
                     b_side = float(input('\nLength of side B:').strip())
+                    c_angle = float(input('\nMeasure of anlge adjacent to sides A and B:').strip())
+
+                    input_value_loop = False
+                
+                except ValueError:
+                    print('Please enter a proper value')
+                
+            print(f'\nThe side opposite to C measures {LawOfCos.loc_find_length(a_side, b_side, c_side)}')
+
+        elif sub_menu == '2':
+            input_value_loop = True
+            while input_value_loop:
+                try:
+                    a_side = float(input('\nLength of side A:').strip())
+                    b_side = float(input('\nLength of side B:').strip())
                     c_side = float(input('\nLength of side C:').strip())
 
                     input_value_loop = False
@@ -96,9 +111,6 @@ while menu_loop:
                     print('Please enter a proper value')
                 
             print(f'\nThe anlge opposite to C measures {LawOfCos.loc_find_angle(a_side, b_side, c_side)} degrees')
-
-        elif sub_menu == '2':
-            pass
 
     elif menu == '3':
         menu_loop = False
